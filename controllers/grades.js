@@ -2,7 +2,18 @@ const Grade = require("../models/Grade");
 
 module.exports = {
   getGrades,
+  createGrade,
 };
+
+async function createGrade(req, res) {
+  try {
+    const grade = new Grade(req.body);
+
+    await grade.save();
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}
 
 async function getGrades(req, res) {
   try {
