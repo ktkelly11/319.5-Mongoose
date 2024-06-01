@@ -22,3 +22,5 @@ const gradeSchema = Schema({
     },
   ],
 });
+
+module.exports = model("Grade", gradeSchema);
