@@ -7,4 +7,6 @@ router.post("/", gradesCtrl.createGrade);
 
 router.get("/", gradesCtrl.getGrades);
 
+router.put("/:id", gradesCtrl.updateGrade);
+
 module.exports = router;
