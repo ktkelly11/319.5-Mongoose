@@ -1,4 +1,4 @@
-const { Schema, model } = require("../config/db-connection");
+const { Schema, model } = require("../config/db-connections");
 
 const gradeSchema = Schema({
   class_id: {

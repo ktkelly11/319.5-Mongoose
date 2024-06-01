@@ -1,4 +1,4 @@
-const { Schema, model } = require("../config/db-connection");
+const { Schema, model } = require("../config/db-connections");
 
 const userSchema = Schema({
   full_name: {
