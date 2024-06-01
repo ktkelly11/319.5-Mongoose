@@ -1,16 +1,17 @@
 const { Schema, model } = require("../config/db-connection");
 
 const userSchema = Schema({
-  email: {
+  full_name: {
     type: String,
     required: true,
-    unique: true,
   },
-  password: {
-    type: String,
+  class_id: {
+    type: Number,
     required: true,
-    unique: true,
-    min: 5,
+  },
+  learner_id: {
+    type: Number,
+    required: true,
   },
   age: {
     type: Number,
@@ -19,18 +20,6 @@ const userSchema = Schema({
     max: 120,
     message: "Age must be between 18 and 120",
   },
-  isCool: Boolean,
-  skills: [String],
-  pets: [
-    {
-      name: String,
-      petType: String,
-      color: String,
-      age: Number,
-      isCute: Boolean,
-    },
-  ],
-  whatever: String,
 });
 
 module.exports = model("User", userSchema);
