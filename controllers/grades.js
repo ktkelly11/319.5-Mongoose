@@ -4,6 +4,7 @@ module.exports = {
   getGrades,
   createGrade,
   updateGrade,
+  deleteGrade,
 };
 
 async function createGrade(req, res) {
@@ -37,6 +38,18 @@ async function updateGrade(req, res) {
     );
 
     res.status(200).json(updatedGrade);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+}
+
+async function deleteGrade(req, res) {
+  try {
+    await Grade.findByIdAndDelete(req.params.id);
+
+    res.status(200).json({
+      message: "Successfully Deleted the Grade",
+    });
   } catch (err) {
     res.status(400).send(err);
   }

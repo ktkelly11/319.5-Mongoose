@@ -9,4 +9,6 @@ router.get("/", gradesCtrl.getGrades);
 
 router.put("/:id", gradesCtrl.updateGrade);
 
+router.delete("/:id", gradesCtrl.deleteGrade);
+
 module.exports = router;
